@@ -1,0 +1,5 @@
+from tensorflow.python.tools.inspect_checkpoint import \
+    print_tensors_in_checkpoint_file as ptc
+
+latest_ckp = tf.train.latest_checkpoint('./')
+ptc(latest_ckp,all_tensors=False,tensor_name='Variable_100')

@@ -1,0 +1,17 @@
+import pickle
+#Load data from persistent file
+file_name='adv_data'
+fileObject = open(file_name,'rb')
+#advasarial data
+adv_data = pickle.load(fileObject)
+#original data
+ori_data = pickle.load(fileObject)
+fileObject.close()
+
+#plot adversarial data
+unscaled_data = adv_data*255
+plt.imshow(unscaled_data[4,:].reshape([28,28]))
+
+#plot original data
+unscaled_data = ori_data*255
+plt.imshow(unscaled_data[4,:].reshape([28,28]))

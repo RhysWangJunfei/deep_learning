@@ -8,3 +8,8 @@ pickle.dump(y_cv,fileObject)
 pickle.dump(X_test,fileObject)
 pickle.dump(y_test,fileObject)
 fileObject.close()
+
+import pickle
+fileObject = open(file_name,'rb')
+X_train = pickle.load(fileObject)
+fileObject.close()
